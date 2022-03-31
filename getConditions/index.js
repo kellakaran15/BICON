@@ -8,7 +8,7 @@ module.exports = async function (context, req) {
 
     const db = await client.db(config.MONGO_DB);
     const importConditions = await db.collection("importConditions").findOne({ $or:[
-        {Commodity: req.body.Commodity}, {SourceCountry: req.body.SourceCountry}, {TariffCode: req.body.TariffCode}]
+        {SourceCountry: req.body.GOCS.GOCG[0].GdsOriginCntryCode}, {TariffCode: req.body.TariffClassNo}]
     });
     console.log(req.body.Commodity);
     const responseMessage = importConditions;
