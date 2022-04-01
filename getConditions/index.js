@@ -15,6 +15,7 @@ module.exports = async function (context, req) {
     context.res
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: JSON(responseMessage)
+        body: responseMessage,
+        contentType: 'application/json'
     };
 }
