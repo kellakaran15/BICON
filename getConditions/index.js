@@ -12,9 +12,9 @@ module.exports = async function (context, req) {
     });
     console.log(req.body.Commodity);
     const responseMessage = importConditions;
-
+    context.res
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: responseMessage
+        body: JSON(responseMessage)
     };
 }
